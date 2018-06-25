@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using General.Signals;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TimeButton : MonoBehaviour
 {
+	public static Signal<TimeButtonResult> OnComplete = new Signal<TimeButtonResult>();
+
 	public KeyCode Key;
+	public string Id;
 
 	public float Duration = 3;
 	public float GoodPercent = 0.2f;
@@ -24,8 +25,6 @@ public class TimeButton : MonoBehaviour
 	public Image TimeImage;
 	public Image CenterImage;
 	public Text Text;
-
-	public TimeButtonEvent OnComplete = new TimeButtonEvent();
 
 	public bool Running = false;
 
@@ -51,7 +50,7 @@ public class TimeButton : MonoBehaviour
 
 			if (_timeLeft <= 0)
 			{
-				Complete(TimeButtonResult.Expired);
+				Complete(TimeResponseResult.Expired);
 			}
 			else if (PercentLeft < ExcellentPercent)
 			{
@@ -61,7 +60,7 @@ public class TimeButton : MonoBehaviour
 
 				if (keyPressed)
 				{
-					Complete(TimeButtonResult.Excellent);
+					Complete(TimeResponseResult.Excellent);
 				}
 			}
 			else if (PercentLeft < GoodPercent)
@@ -72,7 +71,7 @@ public class TimeButton : MonoBehaviour
 
 				if (keyPressed)
 				{
-					Complete(TimeButtonResult.Good);
+					Complete(TimeResponseResult.Good);
 				}
 			}
 			else
@@ -83,7 +82,7 @@ public class TimeButton : MonoBehaviour
 
 				if (keyPressed)
 				{
-					Complete(TimeButtonResult.TooSoon);
+					Complete(TimeResponseResult.TooSoon);
 				}
 			}
 
@@ -91,9 +90,9 @@ public class TimeButton : MonoBehaviour
 		}
 	}
 
-	private void Complete(TimeButtonResult result)
+	private void Complete(TimeResponseResult result)
 	{
-		OnComplete.Invoke(result);
+		OnComplete.Dispatch(new TimeButtonResult(Id, result));
 		Running = false;
 		Reset();
 	}
@@ -107,14 +106,26 @@ public class TimeButton : MonoBehaviour
 	}
 }
 
-public enum TimeButtonResult
+public class TimeButtonResult
+{
+	public TimeResponseResult Result;
+	public string ButtonId;
+
+	public TimeButtonResult()
+	{
+	}
+
+	public TimeButtonResult(string id, TimeResponseResult result)
+	{
+		ButtonId = id;
+		Result = result;
+	}
+}
+
+public enum TimeResponseResult
 {
 	Excellent,
 	Good,
 	TooSoon,
 	Expired
-}
-
-public class TimeButtonEvent : UnityEvent<TimeButtonResult>
-{
 }
