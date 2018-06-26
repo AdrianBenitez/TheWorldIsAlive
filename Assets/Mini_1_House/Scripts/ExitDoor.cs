@@ -20,6 +20,12 @@ public class ExitDoor : MonoBehaviour {
 		{
 			Debug.Log("You Win!");
 			GetComponent<Renderer>().material.color = Color.red;
+			Invoke("Transition", 2);
 		}
+	}
+
+	private void Transition()
+	{
+		GetComponent<TransitionScene>().Transition();
 	}
 }

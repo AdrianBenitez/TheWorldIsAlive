@@ -10,6 +10,8 @@ public class HousePlayer : MonoBehaviour
 
 	public bool IsGrounded = false;
 
+	public Transform StartPos;
+
 	private float _currentSpeed;
 	private float _distanceToGround;
 
@@ -20,6 +22,7 @@ public class HousePlayer : MonoBehaviour
 	{
 		_rigidbody = GetComponent<Rigidbody>();
 		_distanceToGround = GetComponent<Collider>().bounds.extents.y;
+		transform.position = StartPos.position;
 	}
 	
 	// Update is called once per frame
@@ -32,6 +35,13 @@ public class HousePlayer : MonoBehaviour
 		transform.Translate(_currentSpeed, 0, 0);
 
 		Jump();
+	}
+
+	public void Restart()
+	{
+		// Kill Player
+		// Fade Out and In
+		transform.position = StartPos.position;
 	}
 
 	private void DetermineIsGrounded()
