@@ -7,7 +7,7 @@ public class Runner_CameraController : MonoBehaviour
 	
     void Start()
     {
-        offset = new Vector3(transform.position.x, transform.position.y, mainCharacter.transform.position.z -12f);
+        offset = new Vector3(transform.position.x, transform.position.y +0.5f, mainCharacter.transform.position.z - 9f);
     }
 
     void LateUpdate()
