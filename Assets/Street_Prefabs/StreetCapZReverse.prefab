@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4509665028484230}
   - component: {fileID: 33904680037992782}
   - component: {fileID: 23616368729175832}
+  - component: {fileID: 65839164027644630}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -51,7 +52,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4923732434939192}
-  - component: {fileID: 65141047415523410}
   m_Layer: 0
   m_Name: StreetCapZReverse
   m_TagString: Untagged
@@ -142,12 +142,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161725210475638}
   m_Mesh: {fileID: 4300000, guid: 33fa6d03ec39944ee8ae6168b81857e0, type: 3}
---- !u!65 &65141047415523410
+--- !u!65 &65839164027644630
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1888989501139212}
+  m_GameObject: {fileID: 1161725210475638}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
