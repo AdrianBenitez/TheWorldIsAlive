@@ -5,6 +5,8 @@ using UnityEngine;
 public class mageController : MonoBehaviour {
     public float speed = -2f;
     Animator anim;
+    bool holdingDown;
+
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
@@ -20,21 +22,29 @@ public class mageController : MonoBehaviour {
     {
         if ( Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)  )
         {
-            if (transform.localScale.z == -.12f)
+            holdingDown = true;
+            if (transform.localScale.z == -.08f)
             {
-                transform.localScale += new Vector3(0, 0, +0.24f);
+                transform.localScale += new Vector3(0, 0, +0.16f);
             }
             anim.SetBool("idle", false);
             anim.SetBool ("move", true);   
         }
-
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            if ( transform.localScale.z == .12f) {
-                transform.localScale += new Vector3(0, 0, -0.24f);
+            holdingDown = true;
+            if ( transform.localScale.z == .08f) {
+                transform.localScale += new Vector3(0, 0, -0.16f);
             }
             anim.SetBool("idle", false);
             anim.SetBool("move", true);
+        }
+        if (!Input.anyKey && holdingDown)
+        {
+            //Debug.Log("A key was released");
+            holdingDown = false;
+            anim.SetBool("move", false);
+            anim.SetBool("idle", true);
         }
     }
 }
