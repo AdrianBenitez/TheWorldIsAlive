@@ -12,6 +12,7 @@ public class Runner_CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = mainCharacter.transform.position + offset;
+        var temp = mainCharacter.transform.position + offset;
+        transform.position = new Vector3(transform.position.x, temp.y, temp.z);
     }
 }
