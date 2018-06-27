@@ -7,11 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Runner.unity
     guid: 5ed8c7917d6d146c4b5c60fff63ba85c
   - enabled: 1
-    path: Assets/Scenes/Mini_1_House.unity
-    guid: 73824531f75c17149b066c74d8759e33
+    path: Assets/Scenes/Mini_1_House_byOrlando.unity
+    guid: 3c25e001e97a3824c8d0d904a28e14c1
   m_configObjects: {}

@@ -18,6 +18,6 @@ public class MainMenuController : MonoBehaviour {
     public void OnButtonClick()
     {
         //Loads the first scene (inside house mini-game)
-        SceneManager.LoadScene("Mini_1_House");
+        SceneManager.LoadScene("Mini_1_House_byOrlando");
     }
 }
