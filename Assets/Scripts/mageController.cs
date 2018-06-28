@@ -13,6 +13,7 @@ public class mageController : MonoBehaviour {
     public float jumpHeight = .0005f;
     Animator anim;
     Rigidbody myBody;
+    Collider myCollider;
     bool holdingDown; // To know when a key is being pressed, if no key is being pressed hero should go to idle animation.
     bool goToKinematic;
 
@@ -20,6 +21,7 @@ public class mageController : MonoBehaviour {
     void Start () {
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody>();
+        myCollider = GetComponent<Collider>();
 	}
 	
 	// Update is called once per frame
@@ -83,6 +85,13 @@ public class mageController : MonoBehaviour {
         else
         {
             goToKinematic = false;
+        }
+
+        if(collision.gameObject.tag == "Enemy")
+        { 
+            anim.SetBool("idle", false);
+            anim.SetBool("move", false);
+            anim.SetBool("die", true);
         }
     }
 }
