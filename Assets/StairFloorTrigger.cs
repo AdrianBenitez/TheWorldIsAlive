@@ -14,7 +14,7 @@ public class StairFloorTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Something triggered stairfloortrigger");
+        //Debug.Log("Something triggered stairfloortrigger");
         if (other.tag == "Player")
         {
             if (character.transform.position.z == 1.5f) // if hero is on the stairs z axis then bring hero to front, away from stairs

@@ -8,14 +8,18 @@ using UnityEngine;
  */
 
 public class mageController : MonoBehaviour {
-    // Change speed at your desire.
-    public float speed = -2f;
+    // Change speed at your desire but use negative numbers.
+    public float speed = 5f;
+    public float jumpHeight = .0005f;
     Animator anim;
+    Rigidbody myBody;
     bool holdingDown; // To know when a key is being pressed, if no key is being pressed hero should go to idle animation.
+    bool goToKinematic;
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
+        myBody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -29,24 +33,36 @@ public class mageController : MonoBehaviour {
         // Move hero to right
         if ( Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)  )
         {
-            holdingDown = true;
-            if (transform.localScale.z == -.08f)
+            holdingDown = true; // We are holding a key or button
+            if (transform.localScale.z == -.08f) // if hero is looking to the left switch to face right.
             {
                 transform.localScale += new Vector3(0, 0, +0.16f);
             }
             anim.SetBool("idle", false);
-            anim.SetBool ("move", true);   
+            anim.SetBool ("move", true);
+            myBody.isKinematic = false; // This is used so hero does not slide down stairs, when that is the case we set it to true.
         }
+
         // Move hero to left
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            holdingDown = true;
-            if ( transform.localScale.z == .08f) {
+            holdingDown = true; // We are holding a key or button
+            if ( transform.localScale.z == .08f)  // if hero is looking to the right switch to face left.
+            {  
                 transform.localScale += new Vector3(0, 0, -0.16f);
             }
             anim.SetBool("idle", false);
             anim.SetBool("move", true);
+            myBody.isKinematic = false; // This is used so hero does not slide down stairs, when that is the case we set it to true
         }
+
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) )
+        {
+            holdingDown = true; // We are holding a key or button
+            myBody.AddForce(0, jumpHeight, 0, ForceMode.Impulse);
+        }
+
         // If no keys are being pressed go to idle.
         if (!Input.anyKey && holdingDown)
         {
@@ -54,6 +70,19 @@ public class mageController : MonoBehaviour {
             holdingDown = false;
             anim.SetBool("move", false);
             anim.SetBool("idle", true);
+            if (goToKinematic == true) myBody.isKinematic = true; // Used so hero does not slide down stairs.
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Stair")
+        {
+            goToKinematic = true;
+        }
+        else
+        {
+            goToKinematic = false;
         }
     }
 }
