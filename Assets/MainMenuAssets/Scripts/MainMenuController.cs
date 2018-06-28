@@ -18,6 +18,10 @@ public class MainMenuController : MonoBehaviour {
     public void OnButtonClick()
     {
         //Loads the first scene (inside house mini-game)
-        SceneManager.LoadScene("Mini_1_House_byOrlando");
+		var td = GameObject.FindWithTag("TransitionData").GetComponent<TransitionData>() as TransitionData;
+		td.SetTransition(
+			"The sounds coming from your house wakes you up in the middle of the night. You decide to investigate...",
+			"Mini_1_House_byOrlando");
+		SceneManager.LoadScene("Transition");
     }
 }
