@@ -16,6 +16,7 @@ public class mageController : MonoBehaviour {
     Collider myCollider;
     bool holdingDown; // To know when a key is being pressed, if no key is being pressed hero should go to idle animation.
     bool goToKinematic;
+    bool isDead = false; // Flag when the hero dies
 
     // Use this for initialization
     void Start () {
@@ -23,11 +24,15 @@ public class mageController : MonoBehaviour {
         myBody = GetComponent<Rigidbody>();
         myCollider = GetComponent<Collider>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        transform.Translate(0f, 0f, Input.GetAxis("Horizontal") * Time.deltaTime * speed);
-        Input_Control(); // Do something when keys are pressed.
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!isDead) // We only move when alive
+        {
+            transform.Translate(0f, 0f, Input.GetAxis("Horizontal") * Time.deltaTime * speed);
+            Input_Control(); // Do something when keys are pressed.
+        }
 	}
 
     void Input_Control()
@@ -46,7 +51,7 @@ public class mageController : MonoBehaviour {
         }
 
         // Move hero to left
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) )
         {
             holdingDown = true; // We are holding a key or button
             if ( transform.localScale.z == .08f)  // if hero is looking to the right switch to face left.
@@ -92,6 +97,8 @@ public class mageController : MonoBehaviour {
             anim.SetBool("idle", false);
             anim.SetBool("move", false);
             anim.SetBool("die", true);
+            myBody.isKinematic = true;
+            isDead = true;
         }
     }
 }
