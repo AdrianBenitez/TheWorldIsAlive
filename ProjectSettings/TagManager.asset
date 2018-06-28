@@ -7,6 +7,8 @@ TagManager:
   - Stair
   - Wall
   - Enemy
+  - TransitionData
+  - HouseBody
   layers:
   - Default
   - TransparentFX

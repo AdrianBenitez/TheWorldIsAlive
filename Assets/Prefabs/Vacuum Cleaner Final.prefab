@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4077535168253118}
   - component: {fileID: 33678311081518498}
   - component: {fileID: 23429171354005920}
-  - component: {fileID: 135005544631098422}
   m_Layer: 0
   m_Name: Pupil right
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4470233757686294}
   - component: {fileID: 33053833819118174}
   - component: {fileID: 23789704635939870}
-  - component: {fileID: 135936264941322042}
   m_Layer: 0
   m_Name: Eye left
   m_TagString: Untagged
@@ -74,6 +72,7 @@ GameObject:
   - component: {fileID: 4348317050187794}
   - component: {fileID: 33073653648595120}
   - component: {fileID: 23896742220902708}
+  - component: {fileID: 82410399921990198}
   m_Layer: 0
   m_Name: Hinge
   m_TagString: Untagged
@@ -162,6 +161,7 @@ GameObject:
   - component: {fileID: 65473917162307750}
   - component: {fileID: 114368277184176686}
   - component: {fileID: 82482874273676852}
+  - component: {fileID: 135597208873350722}
   m_Layer: 0
   m_Name: Vacuum Cleaner Final
   m_TagString: Enemy
@@ -196,7 +196,6 @@ GameObject:
   - component: {fileID: 4239391975705618}
   - component: {fileID: 33776523261849106}
   - component: {fileID: 23875047195367732}
-  - component: {fileID: 135463548541740624}
   m_Layer: 0
   m_Name: Pupil left
   m_TagString: Untagged
@@ -231,7 +230,6 @@ GameObject:
   - component: {fileID: 4761411027750342}
   - component: {fileID: 33555400276185092}
   - component: {fileID: 23639581200748770}
-  - component: {fileID: 135021551948683634}
   m_Layer: 0
   m_Name: Eye right
   m_TagString: Untagged
@@ -285,7 +283,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619716433026618}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -4.734, y: 2.481, z: 1.5}
+  m_LocalPosition: {x: -4.902, y: 7.063, z: 1.5}
   m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_Children:
   - {fileID: 4348317050187794}
@@ -946,11 +944,106 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619716433026618}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.29194897, y: 0.33, z: 0.42}
   m_Center: {x: -0, y: 0.050272495, z: 0.2}
+--- !u!82 &82410399921990198
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335886595062182}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e3c750141cbcf054b95b70929d7ab987, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.275
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 76
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82482874273676852
 AudioSource:
   m_ObjectHideFlags: 1
@@ -962,7 +1055,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 98f242956f4b1d6468e4d21dfff53838, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.843
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1079,51 +1172,15 @@ MonoBehaviour:
   Speed: 2
   LeftFacingY: 180
   RightFacingY: -90
---- !u!135 &135005544631098422
+--- !u!135 &135597208873350722
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1094987477123806}
+  m_GameObject: {fileID: 1619716433026618}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135021551948683634
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1984374730160316}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135463548541740624
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1843591067108314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135936264941322042
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1229338641555008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.1
+  m_Center: {x: -0.0004874989, y: 0.050272495, z: 0.11}

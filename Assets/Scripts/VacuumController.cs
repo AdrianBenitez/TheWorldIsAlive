@@ -14,6 +14,7 @@ public class VacuumController : MonoBehaviour {
 
     private bool _facingRight;
     private float _target;
+    bool move = true;
 
     // Use this for initialization
     void Start()
@@ -27,15 +28,18 @@ public class VacuumController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, -Speed * Time.deltaTime, 0);
+        if (move)
+        { 
+            transform.Translate(0, -Speed * Time.deltaTime, 0);
+         }   
     }
 
     void OnCollisionEnter(Collision other)
     {
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-            
-        //} 
+        if (other.gameObject.CompareTag("Player"))
+        {
+            move = false;
+        }
         if (other.gameObject.CompareTag("Wall") )
         {
             Speed = Speed * -1;

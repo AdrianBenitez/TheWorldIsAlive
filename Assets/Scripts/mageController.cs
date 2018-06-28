@@ -13,16 +13,18 @@ public class mageController : MonoBehaviour {
     public float jumpHeight = .0005f;
     Animator anim;
     Rigidbody myBody;
-    Collider myCollider;
+    //CapsuleCollider myCollider;
     bool holdingDown; // To know when a key is being pressed, if no key is being pressed hero should go to idle animation.
     bool goToKinematic;
     bool isDead = false; // Flag when the hero dies
+    [SerializeField]
+    bool canJump;
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody>();
-        myCollider = GetComponent<Collider>();
+        //myCollider = GetComponent<CapsuleCollider>();
 	}
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class mageController : MonoBehaviour {
         {
             holdingDown = true; // We are holding a key or button
             if (transform.localScale.z == -.08f) // if hero is looking to the left switch to face right.
+                //Note: I know this is not the correct way to do it but the lack of time.
             {
                 transform.localScale += new Vector3(0, 0, +0.16f);
             }
@@ -64,7 +67,7 @@ public class mageController : MonoBehaviour {
         }
 
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) )
+        if ( ( Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) )  && canJump )
         {
             holdingDown = true; // We are holding a key or button
             myBody.AddForce(0, jumpHeight, 0, ForceMode.Impulse);
@@ -81,24 +84,33 @@ public class mageController : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Stair")
         {
             goToKinematic = true;
         }
-        else
+        if (collision.gameObject.tag == "HouseBody")
         {
+            canJump = true;
             goToKinematic = false;
         }
+    }
 
-        if(collision.gameObject.tag == "Enemy")
-        { 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
             anim.SetBool("idle", false);
             anim.SetBool("move", false);
             anim.SetBool("die", true);
-            myBody.isKinematic = true;
             isDead = true;
         }
+
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        canJump = false;
     }
 }
