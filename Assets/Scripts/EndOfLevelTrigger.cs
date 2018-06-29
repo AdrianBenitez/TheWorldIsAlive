@@ -9,11 +9,18 @@ public class EndOfLevelTrigger : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        character = GameObject.FindWithTag("Player");
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        SceneManager.LoadScene("Runner");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //TODO PLAY KILL FX
+            //TODO FADE TO BLACK
+            //TODO WAIT 1 second
+            //TODO FADE TO SCENE
+            collision.gameObject.transform.position = new Vector3(0, 0, 6);
+        }
+
     }
 }
