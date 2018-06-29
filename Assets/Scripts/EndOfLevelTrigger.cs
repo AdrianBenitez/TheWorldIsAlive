@@ -5,22 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndOfLevelTrigger : MonoBehaviour {
 
-    GameObject character;
-    // Use this for initialization
-    void Start()
-    {
-    }
+    // This is the trigger that signals that the player made it out of the house.
+    // We need to transition to next minigame.
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //TODO PLAY KILL FX
-            //TODO FADE TO BLACK
-            //TODO WAIT 1 second
-            //TODO FADE TO SCENE
-            collision.gameObject.transform.position = new Vector3(0, 0, 6);
-        }
+    public GameObject character;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene("Runner");
     }
 }

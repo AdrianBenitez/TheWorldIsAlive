@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VacuumController : MonoBehaviour {
+public class VacuumTopFloor : MonoBehaviour {
 
     public float Range = 2;
-    public float Speed = 2f; 
+    public float Speed = 2f;
 
     bool move = true;
 
     // Use this for initialization
     void Start()
     {
-       
-       
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (move)
-        { 
+        {
             transform.Translate(0, -Speed * Time.deltaTime, 0);
-         }   
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -31,7 +31,7 @@ public class VacuumController : MonoBehaviour {
         {
             move = false;
         }
-        if (other.gameObject.CompareTag("Wall") )
+        if (other.gameObject.CompareTag("Wall"))
         {
             //Debug.Log("hit wall");
             Speed = Speed * -1;

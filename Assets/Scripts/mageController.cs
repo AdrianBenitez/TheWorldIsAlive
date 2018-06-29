@@ -12,6 +12,8 @@ public class mageController : MonoBehaviour {
     // Change speed at your desire but use negative numbers.
     public float speed = 5f;
     public float jumpHeight = .0005f;
+    public float respawnDelay = 2;
+
     Animator anim;
     Rigidbody myBody;
     //CapsuleCollider myCollider;
@@ -106,7 +108,7 @@ public class mageController : MonoBehaviour {
             anim.SetBool("move", false);
             anim.SetBool("die", true);
             isDead = true;
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(Respawn(respawnDelay));
         }
 
     }
@@ -114,5 +116,15 @@ public class mageController : MonoBehaviour {
     void OnCollisionExit(Collision collision)
     {
         canJump = false;
+    }
+
+    IEnumerator Respawn(float respawnDelay)
+    {
+        yield return new WaitForSeconds(respawnDelay);
+        //SceneManager.LoadScene("Mini_1_House_byOrlando");
+        transform.position = new Vector3(4.47f, 7.087f, 1.5f);
+        anim.SetBool("die", false);
+        anim.SetBool("idle", true);
+        isDead = false;
     }
 }
