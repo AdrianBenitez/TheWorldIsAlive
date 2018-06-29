@@ -5,24 +5,15 @@ using UnityEngine;
 public class VacuumController : MonoBehaviour {
 
     public float Range = 2;
-    public float Speed = 2;
-    public float LeftFacingY = 90;
-    public float RightFacingY = -90;
+    public float Speed = 2f; 
 
-    private float _leftRange;
-    private float _rightRange;
-
-    private bool _facingRight;
-    private float _target;
     bool move = true;
 
     // Use this for initialization
     void Start()
     {
-        //_rightRange = transform.position.x + Range / 2;
-        //_leftRange = transform.position.x - Range / 2;
-        //_target = _leftRange;
-        //_facingRight = false;
+       
+       
     }
 
     // Update is called once per frame
