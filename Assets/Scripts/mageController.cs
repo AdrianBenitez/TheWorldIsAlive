@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /* Re-using some code from Adrian here.
  * Also I'm using the character and animations from here: https://youtu.be/_rrcoptdnqE
@@ -105,6 +106,7 @@ public class mageController : MonoBehaviour {
             anim.SetBool("move", false);
             anim.SetBool("die", true);
             isDead = true;
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
 
     }

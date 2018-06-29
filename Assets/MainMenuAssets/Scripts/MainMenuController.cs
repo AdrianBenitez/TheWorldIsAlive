@@ -21,7 +21,7 @@ public class MainMenuController : MonoBehaviour {
 		var td = GameObject.FindWithTag("TransitionData").GetComponent<TransitionData>() as TransitionData;
 		td.SetTransition(
 			"The sounds coming from your house wakes you up in the middle of the night. You decide to investigate...",
-			"Mini_1_House_byOrlando");
+			"Mini_1_House");
 		SceneManager.LoadScene("Transition");
     }
 }
