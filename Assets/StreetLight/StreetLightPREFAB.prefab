@@ -155,6 +155,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4536172008089136}
   - component: {fileID: 95562211199469346}
+  - component: {fileID: 114334368787785012}
+  - component: {fileID: 64474037644212648}
+  - component: {fileID: 114056906096535672}
   m_Layer: 0
   m_Name: Street Light
   m_TagString: Untagged
@@ -647,14 +650,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265620719550770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.97, y: -1.21, z: 16.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4536172008089136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4491251451265372
 Transform:
   m_ObjectHideFlags: 1
@@ -690,7 +693,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287491591862620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.47, z: 0}
+  m_LocalPosition: {x: 0, y: 1.55, z: 0}
   m_LocalScale: {x: 0.36822438, y: 0.36822438, z: 0.36822438}
   m_Children:
   - {fileID: 4672692337428464}
@@ -911,6 +914,20 @@ Transform:
   m_Father: {fileID: 4994629347850334}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &64474037644212648
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287491591862620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a1948d02d466440919d7d354c06268ba, type: 3}
 --- !u!95 &95562211199469346
 Animator:
   serializedVersion: 3
@@ -920,7 +937,7 @@ Animator:
   m_GameObject: {fileID: 1287491591862620}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a1948d02d466440919d7d354c06268ba, type: 3}
-  m_Controller: {fileID: 9100000, guid: f95c20513d69641d597884fe18737d47, type: 2}
+  m_Controller: {fileID: 9100000, guid: c052d2967749f4bb9aa0f058e891377a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -929,6 +946,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114056906096535672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287491591862620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882a3991eb3484cf4b43a2159b313f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114334368787785012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287491591862620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cd1bac26c724a33b0e20f8171319ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reachDistance: 4.5
+  Player: {fileID: 0}
 --- !u!137 &137627938798307150
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
