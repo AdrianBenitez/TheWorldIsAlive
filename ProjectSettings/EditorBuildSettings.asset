@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2692dbf33b83bba458d7841fa7aca2fd
   - enabled: 1
     path: Assets/Scenes/Runner.unity
     guid: 5ed8c7917d6d146c4b5c60fff63ba85c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Mini_1_House_byOrlando.unity
     guid: 3c25e001e97a3824c8d0d904a28e14c1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: 6e5c17634b2504789b4a56c9dc40ce7f
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: a692316a75df4fa409db388bcb16b912
   m_configObjects: {}

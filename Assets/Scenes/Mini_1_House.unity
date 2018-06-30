@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49141508, b: 0.54791856, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657797, g: 0.4914143, b: 0.54791796, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 48deed0d0af004a3eb82f658e1103002,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -143,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c962d9e1eed83444b87882f172155db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  scene: 
 --- !u!65 &4483550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1105,6 +1108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   jumpHeight: 4
+  respawnDelay: 3
   canJump: 0
 --- !u!1001 &909739747
 Prefab:
