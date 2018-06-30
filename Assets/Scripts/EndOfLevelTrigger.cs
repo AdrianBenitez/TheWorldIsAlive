@@ -12,6 +12,6 @@ public class EndOfLevelTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Runner");
+        character.transform.position = new Vector3(0, 0, 6);
     }
 }
