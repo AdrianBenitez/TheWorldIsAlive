@@ -354,6 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4994629347850334}
   - component: {fileID: 135530401290241062}
+  - component: {fileID: 114868817371090036}
   m_Layer: 0
   m_Name: head
   m_TagString: Enemy
@@ -971,6 +972,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reachDistance: 4.5
   Player: {fileID: 0}
+--- !u!114 &114868817371090036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690681668047802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5eb2c9c91c876409873d4e8ddad835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135530401290241062
 SphereCollider:
   m_ObjectHideFlags: 1

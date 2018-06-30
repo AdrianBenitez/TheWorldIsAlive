@@ -45,7 +45,7 @@ public class PlayerOnRunnerSceneControl : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
         {
@@ -55,12 +55,6 @@ public class PlayerOnRunnerSceneControl : MonoBehaviour {
             isDead = true;
             StartCoroutine(Respawn(respawnDelay));
         }
-
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        canJump = false;
     }
 
     IEnumerator Respawn(float respawnDelay)

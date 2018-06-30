@@ -20,7 +20,7 @@ public class StreetLightController : MonoBehaviour
         if (playerDistance < reachDistance)
         {
             animator.Play("Armature|AttackGood");
-            Debug.Log(reachDistance);
+            //Debug.Log(reachDistance);
         }
     }
 }
