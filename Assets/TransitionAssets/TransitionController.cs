@@ -32,6 +32,6 @@ public class TransitionController : MonoBehaviour {
 
 	public void OnButtonClick()
 	{
-        SceneManager.LoadScene(TargetScene);
+        SceneManager.LoadScene("Mini_1_House_byOrlando");
 	}
 }

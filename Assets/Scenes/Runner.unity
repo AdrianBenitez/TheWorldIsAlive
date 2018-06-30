@@ -1662,9 +1662,9 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534938099}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e81d00e7f7f7ace4a9943f74b57ba2a8, type: 3}
-  m_Controller: {fileID: 9100000, guid: fd46d956f53bd4016b0c155acfeba27f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 43b9569ae8247d84f86adc0b9ff64040, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 2
   m_ApplyRootMotion: 1
@@ -1673,6 +1673,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &534938102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534938099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15de83439b9484b49a19e57d60a4c950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpHeight: 0.0005
+  respawnDelay: 3
+  canJump: 0
 --- !u!1001 &540883193
 Prefab:
   m_ObjectHideFlags: 0
@@ -2294,6 +2309,10 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 656215818}
+    - target: {fileID: 1265620719550770, guid: 1883deb7ceafe40afa525687beb005a2, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1883deb7ceafe40afa525687beb005a2, type: 2}
   m_IsPrefabParent: 0
@@ -3357,7 +3376,7 @@ GameObject:
   - component: {fileID: 885117586}
   - component: {fileID: 885117590}
   m_Layer: 0
-  m_Name: End of level
+  m_Name: End of runner level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3438,11 +3457,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 885117585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c962d9e1eed83444b87882f172155db3, type: 3}
+  m_Script: {fileID: 11500000, guid: 986464d71327c2e4aa24105b04300fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 656215818}
-  scene: FinalScene
+  character: {fileID: 0}
+  scene: 
 --- !u!1001 &908845387
 Prefab:
   m_ObjectHideFlags: 0
