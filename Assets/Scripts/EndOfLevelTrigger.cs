@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndOfLevelTrigger : MonoBehaviour {
+public class EndOfLevelTrigger : MonoBehaviour 
+{
 
     // This is the trigger that signals that the player made it out of the house.
     // We need to transition to next minigame.
 
     public GameObject character;
+    public string scene;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        character.transform.position = new Vector3(0, 0, 6);
+        SceneManager.LoadScene(scene);
     }
 }
