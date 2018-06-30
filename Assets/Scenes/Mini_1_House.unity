@@ -1797,6 +1797,11 @@ Prefab:
       propertyPath: m_Name
       value: Floor_Trigger_Get_Out_House
       objectReference: {fileID: 0}
+    - target: {fileID: 114040028738660594, guid: 39d0cd9fa0accfa429f040bb1c1f0d06,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39d0cd9fa0accfa429f040bb1c1f0d06, type: 2}
   m_IsPrefabParent: 0

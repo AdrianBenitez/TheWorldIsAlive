@@ -17,6 +17,6 @@ public class EndOfLevelTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        SceneManager.LoadScene("scene");
+        SceneManager.LoadScene("Transition");
     }
 }
