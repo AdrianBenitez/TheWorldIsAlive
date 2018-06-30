@@ -3457,11 +3457,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 885117585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986464d71327c2e4aa24105b04300fcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 13d5d18cec72e47df9ce14ccadac5af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
-  scene: 
+  character: {fileID: 656215818}
+  scene: FinalScene
 --- !u!1001 &908845387
 Prefab:
   m_ObjectHideFlags: 0

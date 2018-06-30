@@ -5,9 +5,11 @@ using UnityEngine;
 public class Runner_PlayerController : MonoBehaviour 
 {
     public float speed;
+    Animator animator;
 
     void Start () 
     {
+        animator = GetComponent<Animator>();
     }
     
     void Update () 
