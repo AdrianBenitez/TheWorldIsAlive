@@ -3608,7 +3608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 885117585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.34, z: 163}
+  m_LocalPosition: {x: 0.008, y: 0.34, z: 9}
   m_LocalScale: {x: 3.415631, y: 1, z: 1.0600357}
   m_Children: []
   m_Father: {fileID: 365794421}
@@ -3625,7 +3625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d5d18cec72e47df9ce14ccadac5af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 656215818}
   scene: FinalScene
 --- !u!1001 &908845387
 Prefab:
@@ -6071,6 +6070,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1833587586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1833587580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37627497, y: 0.56702113, z: 0.20294714}
+  m_Center: {x: 0.000840351, y: 0.4565693, z: 0.016807318}
 --- !u!1001 &1855786639
 Prefab:
   m_ObjectHideFlags: 0
