@@ -12,7 +12,7 @@ public class mageController : MonoBehaviour {
     // Change speed at your desire but use negative numbers.
     public float speed = 5f;
     public float jumpHeight = .0005f;
-    public float respawnDelay = 2;
+    public float respawnDelay = 3;
 
     Animator anim;
     Rigidbody myBody;
@@ -87,7 +87,7 @@ public class mageController : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Stair")
         {
@@ -121,8 +121,16 @@ public class mageController : MonoBehaviour {
     IEnumerator Respawn(float respawnDelay)
     {
         yield return new WaitForSeconds(respawnDelay);
-        //SceneManager.LoadScene("Mini_1_House_byOrlando");
-        transform.position = new Vector3(4.47f, 7.087f, 1.5f);
+
+        // Use only for restarting final scene:
+        string m_Scene = SceneManager.GetActiveScene().name;
+        if (m_Scene == "FinalScene")
+        {
+            transform.position = new Vector3(-7.56f, .13f, 4.88f);
+        }
+        else { 
+            transform.position = new Vector3(4.47f, 7.087f, 1.5f);
+         }
         anim.SetBool("die", false);
         anim.SetBool("idle", true);
         isDead = false;

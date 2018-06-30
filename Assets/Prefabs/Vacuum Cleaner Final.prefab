@@ -283,7 +283,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619716433026618}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -4.902, y: 7.063, z: 1.5}
+  m_LocalPosition: {x: 3.83, y: 0.178, z: 1.5}
   m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_Children:
   - {fileID: 4348317050187794}
@@ -1169,9 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 2
-  Speed: 2
-  LeftFacingY: 180
-  RightFacingY: -90
+  Speed: 4
 --- !u!135 &135597208873350722
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1182,5 +1180,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: -0.0004874989, y: 0.050272495, z: 0.11}
+  m_Radius: 0.05
+  m_Center: {x: -0.0004874989, y: 0.050272495, z: 0.05}
