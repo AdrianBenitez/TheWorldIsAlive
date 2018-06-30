@@ -124,13 +124,17 @@ public class mageController : MonoBehaviour {
 
         // Use only for restarting final scene:
         string m_Scene = SceneManager.GetActiveScene().name;
-        if (m_Scene == "FinalScene")
-        {
-            transform.position = new Vector3(-7.56f, .13f, 4.88f);
-        }
-        else { 
-            transform.position = new Vector3(4.47f, 7.087f, 1.5f);
-         }
+        SceneManager.LoadScene(m_Scene);
+        //if (m_Scene == "FinalScene")
+        //{
+        //    transform.position = new Vector3(-7.56f, .13f, 4.88f);
+        //}
+        //else
+        //{
+        //    m_Scene = SceneManager.GetActiveScene().name;
+        //    SceneManager.LoadScene(m_Scene);
+        //    //transform.position = new Vector3(4.47f, 7.087f, 1.5f);
+        //}
         anim.SetBool("die", false);
         anim.SetBool("idle", true);
         isDead = false;
