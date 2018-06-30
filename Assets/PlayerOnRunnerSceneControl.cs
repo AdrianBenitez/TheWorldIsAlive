@@ -64,10 +64,8 @@ public class PlayerOnRunnerSceneControl : MonoBehaviour {
         if (other.tag == "Enemy")
         {
             Debug.Log("A lamp hit me!");
-            anim.SetBool("move", false);
-            anim.SetBool("die", true);
-            isDead = true;
-            StartCoroutine(Respawn(respawnDelay));
+            string m_Scene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(m_Scene);
         }
     }
 
